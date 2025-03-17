@@ -38,16 +38,26 @@ function App() {
       <div className='relative w-full h-[90vh] bg-black flex'>
         {/* Soham Bhosale - information */}
       </div>
-      <div className='relative w-full h-[90vh] bg-black justify-center flex'>
+      <div className='relative w-full h-[150vh] bg-black justify-center flex'>
          {/* Vedaant Mahale - Timeline */}
-         <div className='relative w-16 h-full bg-black justify-center flex flex-col'>
-          <div className='m-auto w-2 bg-fuchsia-500 mt-5 mb-5 h-30 rounded-full glow'></div>
-          <img className = 'm-auto md:w-14 md:h-14 w-7 h-7 'src = {pinkcircle}></img>
-          <div className='m-auto w-2 bg-fuchsia-500 mt-5 mb-5 h-30 rounded-full glow'></div>
-          <img className = 'm-auto md:w-14 md:h-14 w-7 h-7'src = {pinksquare}></img>
-          <div className='m-auto w-2 bg-fuchsia-500 mt-5 mb-5 h-30 rounded-full glow'></div>
-          <img className = 'm-auto md:w-14 md:h-14 w-7 h-7'src = {pinktraingle}></img>
-          <div className='m-auto w-2 bg-fuchsia-500 mt-5 mb-5 h-30 rounded-full glow'></div>
+         <div className='md:w-3/7 w-1/2'>
+          <div className='md:mt-22 mt-17 h-40 md:mr-10 mr-4 md:w-96 w-40 float-right border-2 border-fuchsia-500 glow rounded-xl'></div>
+          <div className='md:mt-104 mt-88 h-40 md:mr-10 mr-4 md:w-96 w-40 float-right border-2 border-fuchsia-500 glow rounded-xl'></div>
+         </div>
+         <div className='relative h-full bg-black justify-center flex flex-col'>
+          <img className = 'm-auto md:w-14 md:h-14 w-7 h-7 rotate'src = {pinksquare}></img>
+          <div className='m-auto w-1 bg-fuchsia-500 mt-5 mb-5 h-50 rounded-full glow'></div>
+          <img className = 'm-auto md:w-14 md:h-14 w-7 h-7 rotate'src = {pinktraingle}></img>
+          <div className='m-auto w-1 bg-fuchsia-500 mt-5 mb-5 h-50 rounded-full glow'></div>
+          <img className = 'm-auto md:w-14 md:h-14 w-7 h-7 rotate'src = {pinksquare}></img>
+          <div className='m-auto w-1 bg-fuchsia-500 mt-5 mb-5 h-50 rounded-full glow'></div>
+          <img className = 'm-auto md:w-14 md:h-14 w-7 h-7 rotate'src = {pinktraingle}></img>
+          <div className='m-auto w-1 bg-fuchsia-500 mt-5 mb-5 h-50 rounded-full glow'></div>
+          <img className = 'm-auto mb-10 md:w-14 md:h-14 w-7 h-7 rotate'src = {pinksquare}></img>
+         </div>
+         <div className='md:w-3/7 w-1/2'>
+         <div className='mt-80 md:mt-94 h-40 md:w-96 md:ml-10 ml-4 w-40 float-left border-2 border-fuchsia-500 glow rounded-xl'></div>
+         <div className='md:mt-104 mt-88 h-40 md:ml-10 ml-4 md:w-96 w-40 float-left border-2 border-fuchsia-500 glow rounded-xl'></div>
          </div>
       </div>
     </>
