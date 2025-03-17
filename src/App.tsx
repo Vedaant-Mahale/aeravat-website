@@ -9,6 +9,7 @@ function App() {
   return (
     <>
       <div className='relative w-full h-[90vh] bg-black flex justify-center items-center flex-col'>
+        <div className='text-7xl text-fuchsia-400 absolute top-5 font-mono'>AERAVAT</div>
         <div className='absolute md:w-40 md:h-40 w-20 h-20 rounded-full border-fuchsia-400 md:border-4 border-2 text-fuchsia-400 top-1/2 translate-y-[90px] md:translate-y-[180px] bottom-50 flex justify-center items-center shadow-[0px_0px_20px_rgb(255,100,200)] transition-all duration-300 ease-in-out' style={{opacity : clicked? 1:0,
           transform: clicked ?  "translate(0px, 0px)":"translate(0px,-200px)"
         }}>ABOUT</div>
@@ -37,8 +38,17 @@ function App() {
       <div className='relative w-full h-[90vh] bg-black flex'>
         {/* Soham Bhosale - information */}
       </div>
-      <div className='relative w-full h-[90vh] bg-black flex justify-center items-center flex-col'>
+      <div className='relative w-full h-[90vh] bg-black justify-center flex'>
          {/* Vedaant Mahale - Timeline */}
+         <div className='relative w-16 h-full bg-black justify-center flex flex-col'>
+          <div className='m-auto w-2 bg-fuchsia-500 mt-5 mb-5 h-30 rounded-full glow'></div>
+          <img className = 'm-auto md:w-14 md:h-14 w-7 h-7 'src = {pinkcircle}></img>
+          <div className='m-auto w-2 bg-fuchsia-500 mt-5 mb-5 h-30 rounded-full glow'></div>
+          <img className = 'm-auto md:w-14 md:h-14 w-7 h-7'src = {pinksquare}></img>
+          <div className='m-auto w-2 bg-fuchsia-500 mt-5 mb-5 h-30 rounded-full glow'></div>
+          <img className = 'm-auto md:w-14 md:h-14 w-7 h-7'src = {pinktraingle}></img>
+          <div className='m-auto w-2 bg-fuchsia-500 mt-5 mb-5 h-30 rounded-full glow'></div>
+         </div>
       </div>
     </>
   )
