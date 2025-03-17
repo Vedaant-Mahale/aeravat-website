@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+.rotate
+{
+    animation: rotate 5s linear infinite
+}
+.smoothcolour
+{
+    transition: background-color 1s ease
+}
+@keyframes rotate {
+    0%
+    {
+        transform:rotateZ(0deg);
+    }
+    50%
+    {
+        transform:rotateZ(180deg);
+    }
+    100%
+    {
+        transform:rotateZ(360deg);
+    }
+}
