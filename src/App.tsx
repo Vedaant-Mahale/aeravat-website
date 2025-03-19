@@ -16,8 +16,9 @@ gsap.registerPlugin(ScrollTrigger)
 
 function App() {
   const [clicked, setClicked] = useState(false)
-  const aboutRef = useRef<HTMLDivElement>(null)
-  const timelineRef = useRef<HTMLDivElement>(null)
+  const aboutRef = useRef<HTMLDivElement | null>(null) as any;
+  const timelineRef = useRef<HTMLDivElement | null>(null) as any;
+  const contactRef = useRef<HTMLDivElement | null>(null) as any;
 
   // Refs for GSAP animations
   const aboutTitleRef = useRef<HTMLDivElement>(null)
@@ -104,14 +105,14 @@ function App() {
       if (timelineRef.current) {
         // Animate timeline boxes on the left
         gsap.from(".timeline-left-box", {
-          x: -100,
-          opacity: 0,
-          duration: 0.8,
-          stagger: 0.2,
+          x: -50,
+          opacity: 0.2,
+          duration: 0.3,
+          stagger: 0.1,
           scrollTrigger: {
             trigger: timelineRef.current,
-            start: "top 70%",
-            end: "bottom 20%",
+            start: "top 90%",
+            end: "center 60%", 
             toggleActions: "play none none none",
             scrub: 1,
           },
@@ -119,14 +120,14 @@ function App() {
 
         // Animate timeline boxes on the right
         gsap.from(".timeline-right-box", {
-          x: 100,
-          opacity: 0,
-          duration: 0.8,
-          stagger: 0.2,
+          x: 50,
+          opacity: 0.2,
+          duration: 0.3,
+          stagger: 0.1,
           scrollTrigger: {
             trigger: timelineRef.current,
-            start: "top 70%",
-            end: "bottom 20%",
+            start: "top 90%",
+            end: "center 60%", 
             toggleActions: "play none none none",
             scrub: 1,
           },
@@ -135,17 +136,43 @@ function App() {
         // Animate timeline center items
         gsap.from(".timeline-center-item", {
           scale: 0,
-          opacity: 0,
-          duration: 0.5,
+          opacity: 0.2,
+          duration: 0.3,
           stagger: 0.1,
           scrollTrigger: {
             trigger: timelineRef.current,
             start: "top 70%",
-            end: "bottom 20%",
+            end: "center 40%",
             toggleActions: "play none none none",
             scrub: 1,
           },
         })
+
+        gsap.from(".contact-item", {
+          xPercent: -100, // Moves it left by 50% of its own width
+          x: "50vw", // Moves it to the center of the viewport
+          duration: 0.5,
+          stagger: 0.1,
+          scrollTrigger: {
+            trigger: contactRef.current,
+            start: "top 100%", 
+            end: "center 100%",
+            toggleActions: "play none none none",
+            scrub: 1,
+          },
+        });   
+        gsap.from(".contact-info", {
+          opacity:0,
+          duration: 0.5,
+          stagger: 0.1,
+          scrollTrigger: {
+            trigger: contactRef.current,
+            start: "top 100%",
+            end: "center 100%",
+            toggleActions: "play none none none",
+            scrub: 1,
+          },
+        });                           
       }
     })
 
@@ -312,41 +339,54 @@ function App() {
           </div>
         </div>
       </div>
-
-      <div ref={timelineRef} className="relative w-full h-[200vh] bg-black justify-center flex">
+      <div ref={timelineRef} className="relative w-full md:h-[150vh] h-[100vh] bg-black justify-center flex overflow-x-hidden">
         <div className="md:w-3/7 w-1/2">
-          <div className="timeline-left-box md:mt-22 mt-17 h-40 md:mr-10 mr-4 md:w-96 w-40 float-right border-2 border-fuchsia-500 glow rounded-xl"></div>
-          <div className="timeline-left-box md:mt-104 mt-88 h-40 md:mr-10 mr-4 md:w-96 w-40 float-right border-2 border-fuchsia-500 glow rounded-xl"></div>
+          <div className="timeline-left-box md:mt-22 mt-17 md:h-40 h-20 md:mr-10 mr-4 md:w-96 w-5/6 float-right border-2 border-fuchsia-500 glow rounded-xl"></div>
+          <div className="timeline-left-box md:mt-104 mt-40 md:h-40 h-20 md:mr-10 mr-4 md:w-96 w-5/6 float-right border-2 border-fuchsia-500 glow rounded-xl"></div>
         </div>
-        <div className="relative h-full bg-black justify-center flex flex-col">
+        <div className="relative h-full bg-black flex flex-col">
           <img
-            className="timeline-center-item m-auto md:w-14 md:h-14 w-7 h-7 rotate"
+            className="timeline-center-item md:w-14 md:h-14 w-7 h-7 rotate"
             src={pinksquare || "/placeholder.svg"}
           ></img>
-          <div className="timeline-center-item m-auto w-1 bg-fuchsia-500 mt-5 mb-5 h-50 rounded-full glow"></div>
+          <div className="timeline-center-item ml-auto mr-auto w-1 bg-fuchsia-500 md:mt-5 md:mb-5 md:h-40 h-25 m-1 rounded-full glow"></div>
           <img
-            className="timeline-center-item m-auto md:w-14 md:h-14 w-7 h-7 rotate"
+            className="timeline-center-item md:w-14 md:h-14 w-7 h-7 rotate"
             src={pinktraingle || "/placeholder.svg"}
           ></img>
-          <div className="timeline-center-item m-auto w-1 bg-fuchsia-500 mt-5 mb-5 h-50 rounded-full glow"></div>
+          <div className="timeline-center-item ml-auto mr-auto w-1 bg-fuchsia-500 md:mt-5 md:mb-5 md:h-40 h-25 m-1 rounded-full glow"></div>
           <img
-            className="timeline-center-item m-auto md:w-14 md:h-14 w-7 h-7 rotate"
+            className="timeline-center-item md:w-14 md:h-14 w-7 h-7 rotate"
             src={pinksquare || "/placeholder.svg"}
           ></img>
-          <div className="timeline-center-item m-auto w-1 bg-fuchsia-500 mt-5 mb-5 h-50 rounded-full glow"></div>
+          <div className="timeline-center-item ml-auto mr-auto w-1 bg-fuchsia-500 md:mt-5 md:mb-5 md:h-40 h-25 m-1 rounded-full glow"></div>
           <img
-            className="timeline-center-item m-auto md:w-14 md:h-14 w-7 h-7 rotate"
+            className="timeline-center-item md:w-14 md:h-14 w-7 h-7 rotate"
             src={pinktraingle || "/placeholder.svg"}
           ></img>
-          <div className="timeline-center-item m-auto w-1 bg-fuchsia-500 mt-5 mb-5 h-50 rounded-full glow"></div>
+          <div className="timeline-center-item ml-auto mr-auto w-1 bg-fuchsia-500 md:mt-5 md:mb-5 md:h-40 h-25 m-1 rounded-full glow"></div>
           <img
-            className="timeline-center-item m-auto mb-10 md:w-14 md:h-14 w-7 h-7 rotate"
+            className="timeline-center-item mb-10 md:w-14 md:h-14 w-7 h-7 rotate"
             src={pinksquare || "/placeholder.svg"}
           ></img>
         </div>
         <div className="md:w-3/7 w-1/2">
-          <div className="timeline-right-box mt-80 md:mt-94 h-40 md:w-96 md:ml-10 ml-4 w-40 float-left border-2 border-fuchsia-500 glow rounded-xl"></div>
-          <div className="timeline-right-box md:mt-104 mt-88 h-40 md:ml-10 ml-4 md:w-96 w-40 float-left border-2 border-fuchsia-500 glow rounded-xl"></div>
+          <div className="timeline-right-box mt-54 md:mt-94 md:h-40 h-20 md:w-96 md:ml-10 ml-4 w-5/6 mr-5 float-left border-2 border-fuchsia-500 glow rounded-xl"></div>
+          <div className="timeline-right-box md:mt-104 mt-40 md:h-40 h-20 md:ml-10 ml-4 md:w-96 w-5/6 mr-5 float-left border-2 border-fuchsia-500 glow rounded-xl"></div>
+        </div>
+      </div>
+      <div className="relative w-full md:h-[100vh] h-[50vh] justify-center bg-black flex flex-col">
+        <div className="m-auto mt-2 mb-2 md:mt-5 md:mb-5 flex justify-between w-[90vw] md:w-1/2">
+          <img ref = {contactRef} src = {squidGameBg} className="contact-item mr-2 md:mr-auto md:w-50 md:h-50 h-20 w-20 rounded-full border-[#e51937] shadow-[0px_0px_20px_rgb(229,25,55)] md:border-6 border-2"></img>
+          <div ref = {contactRef} className="contact-info w-96 md:h-40  h-15 border-2 border-[#e51937] shadow-[0px_0px_20px_rgb(229,25,55)] m-auto rounded-2xl"></div>
+        </div>
+        <div className="m-auto mt-2 mb-2 md:mt-5 md:mb-5 flex justify-between w-[90vw] md:w-1/2">
+          <img ref = {contactRef} src = {squidGameBg} className=" contact-item mr-2 md:mr-auto md:w-50 md:h-50 h-20 w-20 rounded-full border-[#1f9e62] shadow-[0px_0px_20px_rgb(31,159,98)] md:border-6 border-2"></img>
+          <div ref = {contactRef} className="contact-info w-96 md:h-40  h-15 border-2 border-[#1f9e62] shadow-[0px_0px_20px_rgb(31,159,98)] m-auto rounded-2xl"></div>
+        </div>
+        <div className="m-auto mt-2 mb-2 md:mt-5 md:mb-5 flex justify-between w-[90vw] md:w-1/2">
+          <img ref = {contactRef} src = {squidGameBg} className=" contact-item mr-2 md:mr-auto md:w-50 md:h-50 h-20 w-20 rounded-full border-[#ff3d6f] shadow-[0px_0px_20px_rgb(255,61,111)] md:border-6 border-2"></img>
+          <div ref = {contactRef} className="contact-info w-96 md:h-40  h-15 border-2 border-[#ff3d6f] shadow-[0px_0px_20px_rgb(255,61,111)] m-auto rounded-2xl"></div>
         </div>
       </div>
     </>
