@@ -14,7 +14,20 @@
   font-weight: normal;
   font-style: normal;
 }
-
+.hover-grow
+{
+  scale:100%;
+  transition: scale 0.3s ease;
+  cursor: pointer;
+  color:rgb(243, 124, 243);
+  background-color: black;
+}
+.hover-grow:hover
+{
+  scale:110%;
+  color:black;
+  background-color: rgb(243, 124, 243);
+}
 .rotate {
   animation: rotate 5s linear infinite;
 }

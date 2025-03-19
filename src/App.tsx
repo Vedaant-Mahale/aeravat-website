@@ -187,6 +187,7 @@ function App() {
     <>
       <div className="relative w-full h-screen bg-black flex justify-center items-center flex-col">
         <div className="text-7xl text-fuchsia-400 absolute top-5 squid-font">AERAVAT</div>
+        <a href="" className="text-4xl text-fuchsia-400 absolute top-35 squid-font p-2 border-2 border-fuchsia-400 rounded-xl shadow-[0px_0px_20px_rgb(255,100,200)] hover-grow">REGISTER</a>
         <div
           className="absolute md:w-40 md:h-40 w-20 h-20 rounded-full border-fuchsia-400 md:border-4 border-2 text-fuchsia-400 top-1/2 translate-y-[90px] md:translate-y-[180px] bottom-50 flex justify-center items-center shadow-[0px_0px_20px_rgb(255,100,200)] transition-all duration-300 ease-in-out cursor-pointer hover:bg-fuchsia-400/20 squid-font"
           style={{
@@ -213,6 +214,7 @@ function App() {
             opacity: clicked ? 1 : 0,
             transform: clicked ? "translate(0px, 0px)" : "translate(-200px,80px)",
           }}
+          onClick={() => scrollToSection(contactRef)}
         >
           CONTACT
         </div>
@@ -265,7 +267,7 @@ function App() {
                 </p>
 
                 <div className="mt-auto flex justify-between items-center">
-                  <div className="squid-button px-6 py-2 bg-squid-pink text-white font-bold rounded cursor-pointer hover:bg-white hover:text-squid-pink transition-colors squid-font">
+                  <div className="squid-button px-6 py-2 bg-squid-pink text-white font-bold rounded cursor-pointer hover:bg-white hover:text-squid-pink transition-colors squid-font" onClick={() => window.open('/AIRAVAT_RULEBOOK.pdf', '_blank')}>
                     LEARN MORE
                   </div>
                   <div className="w-12 h-12 bg-squid-pink rounded-full flex items-center justify-center">
@@ -302,9 +304,9 @@ function App() {
                 </div>
 
                 <div className="mt-auto flex justify-between items-center">
-                  <div className="squid-button px-6 py-2 bg-squid-green text-white font-bold rounded cursor-pointer hover:bg-white hover:text-squid-green transition-colors squid-font">
+                  <a className="squid-button px-6 py-2 bg-squid-green text-white font-bold rounded cursor-pointer hover:bg-white hover:text-squid-green transition-colors squid-font">
                     REGISTER
-                  </div>
+                  </a>
                   <div className="w-12 h-12 bg-[#1f9e62] flex items-center justify-center">
                     <div className="w-8 h-8 bg-white square"></div>
                   </div>
@@ -326,7 +328,7 @@ function App() {
                 </p>
 
                 <div className="mt-auto flex justify-between items-center">
-                  <div className="squid-button px-6 py-2 bg-squid-red text-white font-bold rounded cursor-pointer hover:bg-white hover:text-squid-red transition-colors squid-font">
+                  <div className="squid-button px-6 py-2 bg-squid-red text-white font-bold rounded cursor-pointer hover:bg-white hover:text-squid-red transition-colors squid-font" onClick={() => window.open('/PS-Airavat_2.0.pdf', '_blank')}>
                     JOIN THE GAME
                   </div>
                   <div className="relative w-12 h-12 flex items-center justify-center">
