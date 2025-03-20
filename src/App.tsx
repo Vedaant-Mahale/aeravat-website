@@ -10,6 +10,9 @@ import pinkcircle from "./assets/pink-circle.png"
 import squidGameBg from "./assets/squid-game-14.jpg"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
+import soham from "./assets/soham.jpg"
+import aaryan from "./assets/aaryan.jpg"
+import omkar from "./assets/omkar.jpeg"
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger)
@@ -408,16 +411,22 @@ function App() {
         </div>
       <div className="relative w-full md:h-[100vh] h-[50vh] justify-center bg-black flex flex-col">
         <div className="m-auto mt-2 mb-2 md:mt-5 md:mb-5 flex justify-between w-[90vw] md:w-1/2">
-          <img ref = {contactRef} src = {squidGameBg} className="contact-item mr-2 md:mr-auto md:w-50 md:h-50 h-20 w-20 rounded-full border-[#e51937] shadow-[0px_0px_20px_rgb(229,25,55)] md:border-6 border-2"></img>
-          <div ref = {contactRef} className="contact-info w-96 md:h-40  h-15 border-2 border-[#e51937] shadow-[0px_0px_20px_rgb(229,25,55)] m-auto rounded-2xl"></div>
+          <img ref = {contactRef} src = {soham} className="contact-item mr-2 md:mr-auto md:w-50 md:h-50 h-20 w-20 rounded-full border-[#e51937] shadow-[0px_0px_20px_rgb(229,25,55)] md:border-6 border-2"></img>
+          <div ref = {contactRef} className="contact-info w-96 md:h-40  h-15 border-2 border-[#e51937] shadow-[0px_0px_20px_rgb(229,25,55)] m-auto rounded-2xl flex justify-center flex-col items-center">
+          <div className="text-white octosquares-font w-2/3 m-auto md:text-3xl text-xs">Soham<br />83690 36486</div>
+          </div>
         </div>
         <div className="m-auto mt-2 mb-2 md:mt-5 md:mb-5 flex justify-between w-[90vw] md:w-1/2">
-          <img ref = {contactRef} src = {squidGameBg} className=" contact-item mr-2 md:mr-auto md:w-50 md:h-50 h-20 w-20 rounded-full border-[#1f9e62] shadow-[0px_0px_20px_rgb(31,159,98)] md:border-6 border-2"></img>
-          <div ref = {contactRef} className="contact-info w-96 md:h-40  h-15 border-2 border-[#1f9e62] shadow-[0px_0px_20px_rgb(31,159,98)] m-auto rounded-2xl"></div>
+          <img ref = {contactRef} src = {omkar} className=" contact-item mr-2 md:mr-auto md:w-50 md:h-50 h-20 w-20 rounded-full border-[#1f9e62] shadow-[0px_0px_20px_rgb(31,159,98)] md:border-6 border-2"></img>
+          <div ref = {contactRef} className="contact-info w-96 md:h-40  h-15 border-2 border-[#1f9e62] shadow-[0px_0px_20px_rgb(31,159,98)] m-auto rounded-2xl flex justify-center flex-col items-center">
+          <div className="text-white octosquares-font w-2/3 m-auto md:text-3xl text-xs">Omkar<br />70450 80926</div>
+          </div>
         </div>
         <div className="m-auto mt-2 mb-2 md:mt-5 md:mb-5 flex justify-between w-[90vw] md:w-1/2">
-          <img ref = {contactRef} src = {squidGameBg} className=" contact-item mr-2 md:mr-auto md:w-50 md:h-50 h-20 w-20 rounded-full border-[#ff3d6f] shadow-[0px_0px_20px_rgb(255,61,111)] md:border-6 border-2"></img>
-          <div ref = {contactRef} className="contact-info w-96 md:h-40  h-15 border-2 border-[#ff3d6f] shadow-[0px_0px_20px_rgb(255,61,111)] m-auto rounded-2xl"></div>
+          <img ref = {contactRef} src = {aaryan} className=" contact-item mr-2 md:mr-auto md:w-50 md:h-50 h-20 w-20 rounded-full border-[#ff3d6f] shadow-[0px_0px_20px_rgb(255,61,111)] md:border-6 border-2"></img>
+          <div ref = {contactRef} className="contact-info w-96 md:h-40  h-15 border-2 border-[#ff3d6f] shadow-[0px_0px_20px_rgb(255,61,111)] m-auto rounded-2xl flex justify-center flex-col items-center">
+          <div className="text-white octosquares-font w-2/3 m-auto md:text-3xl text-xs">Aaryan<br />89762 84997</div>
+          </div>
         </div>
       </div>
       </div>
