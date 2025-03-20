@@ -151,8 +151,8 @@ function App() {
         gsap.from(".contact-item", {
           xPercent: -100, // Moves it left by 50% of its own width
           x: "50vw", // Moves it to the center of the viewport
-          duration: 0.5,
-          stagger: 0.1,
+          duration: 3,
+          stagger: 0.3,
           scrollTrigger: {
             trigger: contactRef.current,
             start: "top 100%", 
@@ -163,8 +163,8 @@ function App() {
         });   
         gsap.from(".contact-info", {
           opacity:0,
-          duration: 0.5,
-          stagger: 0.1,
+          duration: 3,
+          stagger: 0.3,
           scrollTrigger: {
             trigger: contactRef.current,
             start: "top 100%",
@@ -187,7 +187,7 @@ function App() {
     <>
       <div className="relative w-full h-screen bg-black flex justify-center items-center flex-col">
         <div className="text-7xl text-fuchsia-400 absolute top-5 squid-font">AERAVAT</div>
-        <a href="" className="text-4xl text-fuchsia-400 absolute top-35 squid-font p-2 border-2 border-fuchsia-400 rounded-xl shadow-[0px_0px_20px_rgb(255,100,200)] hover-grow">REGISTER</a>
+        <a href="https://unstop.com/o/wdvAW9R?utm_medium=Share&utm_source=shortUrl" className="text-4xl text-fuchsia-400 absolute top-35 squid-font p-2 border-2 border-fuchsia-400 rounded-xl shadow-[0px_0px_20px_rgb(255,100,200)] hover-grow">REGISTER</a>
         <div
           className="absolute md:w-40 md:h-40 w-20 h-20 rounded-full border-fuchsia-400 md:border-4 border-2 text-fuchsia-400 top-1/2 translate-y-[90px] md:translate-y-[180px] bottom-50 flex justify-center items-center shadow-[0px_0px_20px_rgb(255,100,200)] transition-all duration-300 ease-in-out cursor-pointer hover:bg-fuchsia-400/20 squid-font"
           style={{
@@ -304,7 +304,7 @@ function App() {
                 </div>
 
                 <div className="mt-auto flex justify-between items-center">
-                  <a className="squid-button px-6 py-2 bg-squid-green text-white font-bold rounded cursor-pointer hover:bg-white hover:text-squid-green transition-colors squid-font">
+                  <a href = "https://unstop.com/o/wdvAW9R?utm_medium=Share&utm_source=shortUrl" className="squid-button px-6 py-2 bg-squid-green text-white font-bold rounded cursor-pointer hover:bg-white hover:text-squid-green transition-colors squid-font">
                     REGISTER
                   </a>
                   <div className="w-12 h-12 bg-[#1f9e62] flex items-center justify-center">
@@ -341,10 +341,23 @@ function App() {
           </div>
         </div>
       </div>
-      <div ref={timelineRef} className="relative w-full md:h-[150vh] h-[100vh] bg-black justify-center flex overflow-x-hidden">
+      <div
+        className="relative w-full min-h-screen bg-black flex flex-col items-center justify-center overflow-hidden py-16"
+      >
+        <div ref={aboutTitleRef} className="absolute top-8 left-0 w-full flex justify-center z-10">
+          <div className="squid-title text-4xl md:text-7xl text-white font-bold tracking-widest">TIMELINE</div>
+        </div>
+      <div ref={timelineRef} className="relative mt-20 w-full md:h-[170vh] h-[100vh] bg-black justify-center  flex overflow-x-hidden">
         <div className="md:w-3/7 w-1/2">
-          <div className="timeline-left-box md:mt-22 mt-17 md:h-40 h-20 md:mr-10 mr-4 md:w-96 w-5/6 float-right border-2 border-fuchsia-500 glow rounded-xl"></div>
-          <div className="timeline-left-box md:mt-104 mt-40 md:h-40 h-20 md:mr-10 mr-4 md:w-96 w-5/6 float-right border-2 border-fuchsia-500 glow rounded-xl"></div>
+          <div className="timeline-left-box md:mt-22 mt-17 md:h-40 h-20 md:mr-10 mr-4 md:w-96 w-5/6 float-right border-2 border-fuchsia-500 glow rounded-xl justify-center flex flex-col items-center">
+          <div className="text-white octosquares-font w-2/3 m-auto md:text-3xl text-xs">15th March<br />Registration Starts</div>
+          </div>
+          <div className="timeline-left-box md:mt-104 mt-40 md:h-40 h-20 md:mr-10 mr-4 md:w-96 w-5/6 float-right border-2 border-fuchsia-500 glow rounded-xl flex justify-center flex-col items-center">
+          <div className="text-white octosquares-font w-2/3 m-auto md:text-3xl text-xs">5th April<br />Registration Deadline</div>
+          </div>
+          <div className="timeline-left-box md:mt-104 mt-40 md:h-40 h-20 md:mr-10 mr-4 md:w-96 w-5/6 float-right border-2 border-fuchsia-500 glow rounded-xl flex justify-center flex-col items-center">
+          <div className="text-white octosquares-font w-2/3 m-auto md:text-3xl text-xs">12th April<br />Offline Hackathon</div>
+          </div>
         </div>
         <div className="relative h-full bg-black flex flex-col">
           <img
@@ -368,15 +381,31 @@ function App() {
           ></img>
           <div className="timeline-center-item ml-auto mr-auto w-1 bg-fuchsia-500 md:mt-5 md:mb-5 md:h-40 h-25 m-1 rounded-full glow"></div>
           <img
-            className="timeline-center-item mb-10 md:w-14 md:h-14 w-7 h-7 rotate"
+            className="timeline-center-item md:w-14 md:h-14 w-7 h-7 rotate"
             src={pinksquare || "/placeholder.svg"}
+          ></img>
+          <div className="timeline-center-item ml-auto mr-auto w-1 bg-fuchsia-500 md:mt-5 md:mb-5 md:h-40 h-25 m-1 rounded-full glow"></div>
+          <img
+            className="timeline-center-item mb-10 md:w-14 md:h-14 w-7 h-7 rotate"
+            src={pinktraingle || "/placeholder.svg"}
           ></img>
         </div>
         <div className="md:w-3/7 w-1/2">
-          <div className="timeline-right-box mt-54 md:mt-94 md:h-40 h-20 md:w-96 md:ml-10 ml-4 w-5/6 mr-5 float-left border-2 border-fuchsia-500 glow rounded-xl"></div>
-          <div className="timeline-right-box md:mt-104 mt-40 md:h-40 h-20 md:ml-10 ml-4 md:w-96 w-5/6 mr-5 float-left border-2 border-fuchsia-500 glow rounded-xl"></div>
+          <div className="timeline-right-box mt-54 md:mt-94 md:h-40 h-20 md:w-96 md:ml-10 ml-4 w-5/6 mr-5 float-left border-2 border-fuchsia-500 glow rounded-xl flex justify-center flex-col items-center">
+          <div className="text-white octosquares-font w-2/3 m-auto md:text-3xl text-xs">17th March<br />PS reveal</div>
+          </div>
+          <div className="timeline-right-box md:mt-104 mt-40 md:h-40 h-20 md:ml-10 ml-4 md:w-96 w-5/6 mr-5 float-left border-2 border-fuchsia-500 glow rounded-xl flex justify-center flex-col items-center">
+          <div className="text-white octosquares-font w-2/3 m-auto md:text-3xl text-xs">7th April<br />Round 1 Results</div>
+          </div>
         </div>
       </div>
+      </div>
+      <div
+        className="relative w-full min-h-screen bg-black flex flex-col items-center justify-center overflow-hidden py-16"
+      >
+        <div ref={aboutTitleRef} className="absolute top-8 left-0 w-full flex justify-center z-10">
+          <div className="squid-title text-4xl md:text-7xl text-white font-bold tracking-widest">CONTACT</div>
+        </div>
       <div className="relative w-full md:h-[100vh] h-[50vh] justify-center bg-black flex flex-col">
         <div className="m-auto mt-2 mb-2 md:mt-5 md:mb-5 flex justify-between w-[90vw] md:w-1/2">
           <img ref = {contactRef} src = {squidGameBg} className="contact-item mr-2 md:mr-auto md:w-50 md:h-50 h-20 w-20 rounded-full border-[#e51937] shadow-[0px_0px_20px_rgb(229,25,55)] md:border-6 border-2"></img>
@@ -390,6 +419,7 @@ function App() {
           <img ref = {contactRef} src = {squidGameBg} className=" contact-item mr-2 md:mr-auto md:w-50 md:h-50 h-20 w-20 rounded-full border-[#ff3d6f] shadow-[0px_0px_20px_rgb(255,61,111)] md:border-6 border-2"></img>
           <div ref = {contactRef} className="contact-info w-96 md:h-40  h-15 border-2 border-[#ff3d6f] shadow-[0px_0px_20px_rgb(255,61,111)] m-auto rounded-2xl"></div>
         </div>
+      </div>
       </div>
     </>
   )
